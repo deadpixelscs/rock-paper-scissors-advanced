@@ -8,5 +8,8 @@ player = None
 while player not in choices:
     player = input('rock, paper, scissors, or gun?: ')
 
-print(player)
+if player == cpu:
+    print('player: ',player)
+    
+print('cpu: ',cpu)
 

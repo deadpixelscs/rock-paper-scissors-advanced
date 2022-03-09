@@ -40,3 +40,17 @@ elif player == 'paper':
         print('cpu: ',cpu)
         print('player: ',player)
         print('You Lost!')
+
+elif player == 'scissors':
+    if cpu == 'paper':
+        print('cpu: ',cpu)
+        print('player: ',player)
+        print('Congratulations you won!')
+    if cpu == 'rock':
+        print('cpu: ',cpu)
+        print('player: ',player)
+        print('Nevermind, you lose!')
+    if cpu == 'gun':
+        print('cpu: ',cpu)
+        print('player: ',player)
+        print('Its a tie!')

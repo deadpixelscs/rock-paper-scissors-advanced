@@ -1,70 +1,105 @@
 import random
 
-choices = ['rock','paper','scissors','gun']
+choices = ['rock', 'paper', 'scissors', 'shield', 'gwagg']
 
 cpu = random.choice(choices)
 player = None
 
 while player not in choices:
-    player = input('rock, paper, scissors, or gun?: ')
+    player = input('rock, paper, scissors, shield or gwagg?: ')
 
 if player == cpu:
-    print('cpu: ',cpu)
-    print('player: ',player)
-    print('Unlucky!, that games was a Tie!')
+    print('cpu:', cpu)
+    print('player:', player)
+    print('That games was a Tie!')
 
 elif player == 'rock':
     if cpu == 'paper':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Hahahaha...You Lose!')
     if cpu == 'scissors':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Welldone you beat me!')
-    if cpu == 'gun':
-        print('cpu: ',cpu)
-        print('player: ',player)
-        print('Welldone you won!')
+    if cpu == 'shield':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Unlucky!...close draw')
+    if cpu == 'gwagg':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Bye Bye')
         
 elif player == 'paper':
     if cpu == 'rock':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Congratulations you won!')
     if cpu == 'scissors':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Nevermind, you lose!')
-    if cpu == 'gun':
-        print('cpu: ',cpu)
-        print('player: ',player)
-        print('You Lost!')
+    if cpu == 'shield':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('You Draw!')
+    if cpu == 'gwagg':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Bye Bye')
 
 elif player == 'scissors':
     if cpu == 'paper':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Congratulations you won!')
     if cpu == 'rock':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
         print('Nevermind, you lose!')
-    if cpu == 'gun':
-        print('cpu: ',cpu)
-        print('player: ',player)
-        print('You Lost!')
+    if cpu == 'shield':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('You Draw!')
+    if cpu == 'gwagg':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Bye Bye')
 
-elif player == 'gun':
+elif player == 'shield':
     if cpu == 'paper':
-        print('cpu: ',cpu)
-        print('player: ',player)
-        print('Congratulations you won!')
+        print('cpu:', cpu)
+        print('player:', player)
+        print('You Draw!')
     if cpu == 'rock':
-        print('cpu: ',cpu)
-        print('player: ',player)
-        print('Nevermind, you lose!')
+        print('cpu:', cpu)
+        print('player:', player)
+        print('You Draw!')
     if cpu == 'scissors':
-        print('cpu: ',cpu)
-        print('player: ',player)
+        print('cpu:', cpu)
+        print('player:', player)
+        print('You Draw!')
+    if cpu == 'gwagg':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Kaaaching!...its a draw')
+
+elif player == 'gwagg':
+    if cpu == 'paper':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Welldone my friend!')
+    if cpu == 'rock':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Congratulations you won!')
+    if cpu == 'scissors':
+        print('cpu:', cpu)
+        print('player:', player)
         print('Welldone you win!')
+    if cpu == 'shield':
+        print('cpu:', cpu)
+        print('player:', player)
+        print('Its a draw')
+

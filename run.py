@@ -6,7 +6,7 @@ cpu = random.choice(choices)
 player = None
 
 while player not in choices:
-    player = input('rock, paper, scissors, shield or gwagg?: ')
+    player = input('rock, paper, scissors, shield or gwagg?: ').lower()
 
 if player == cpu:
     print('cpu:', cpu)

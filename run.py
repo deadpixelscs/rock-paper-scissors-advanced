@@ -1,7 +1,7 @@
 import random               #imports a random module for this computer.
 
 print()
-input("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg! Press Enter to start. ")
+input("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg! \n\nPress Enter to start. ")
 print()
 
 player_score = 0
@@ -115,5 +115,6 @@ while True:
     if repeat == "n":
         break
 
-    print("\-------------------------\n")
+    print()
+    print("--------------------------------------\n")
 

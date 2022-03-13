@@ -2,6 +2,9 @@ import random               #imports a random module for this computer.
 
 input("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg! Press Enter to start. ")
 
+player_score = 0
+cpu_score = 0
+
 while True:
     player_choice = input("Rock, Paper, Scissors, Shield or Gwagg? ").lower()
     while player_choice != "rock" and player_choice != "paper" and player_choice != "scissors" and player_choice != "shield" and player_choice != "gwagg":
@@ -30,36 +33,45 @@ while True:
             print("The game was a tie!")
         elif cpu_choice == "paper":
             print("You Lose!")
+            cpu_score += 1
         elif cpu_choice == "scissors":
             print("You win!")
+            player_score += 1
         elif cpu_choice == "shield":
             print("The game was a tie!")
         elif cpu_choice == "gwagg":
             print("You lost!")
+            cpu_score += 1
 
     elif player_choice == "paper":
         if cpu_choice == "paper":
             print("The game was a tie!")
         elif cpu_choice == "rock":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "scissors":
             print("You Lose!")
+            cpu_score += 1
         elif cpu_choice == "shield":
             print("The game was a tie!")
         elif cpu_choice == "gwagg":
             print("You lost!")
+            cpu_score += 1
 
     elif player_choice == "scissors":
         if cpu_choice == "scissors":
             print("The game was a tie!")
         elif cpu_choice == "rock":
             print("You Lose!")
+            cpu_score += 1
         elif cpu_choice == "paper":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "shield":
             print("The game was a tie!")
         elif cpu_choice == "gwagg":
             print("You lost!")
+            cpu_score += 1
 
     elif player_choice == "shield":
         if cpu_choice == "shield":
@@ -76,13 +88,24 @@ while True:
     elif player_choice == "gwagg":
         if cpu_choice == "gwagg":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "rock":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "paper":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "scissors":
             print("You Win!")
+            player_score += 1
         elif cpu_choice == "shield":
             print("The game was a tie!")
+
+    print("You have", player_score,"wins")
+    print("the compuer has", cpu_score,"wins")
+    print()
+
+    repeat = input("Play again? (Y/N) ").lower()
+
 
 

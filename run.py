@@ -1,6 +1,8 @@
 import random               #imports a random module for this computer.
 
+print()
 input("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg! Press Enter to start. ")
+print()
 
 player_score = 0
 cpu_score = 0
@@ -101,11 +103,17 @@ while True:
         elif cpu_choice == "shield":
             print("The game was a tie!")
 
+    print()
     print("You have", player_score,"wins")
-    print("the compuer has", cpu_score,"wins")
+    print("The compuer has", cpu_score,"wins")
     print()
 
     repeat = input("Play again? (Y/N) ").lower()
+    while repeat != "n" and repeat != "y":
+        repeat = input("Invalid input, please try again: ").lower()
 
+    if repeat == "n":
+        break
 
+    print("\-------------------------\n")
 

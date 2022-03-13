@@ -1,113 +1,87 @@
-import random
+print()
+print("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg. Please choose a weapon from the selections below")
+print()
 
-while True:
-    choices = ['rock', 'paper', 'scissors', 'shield', 'gwagg']
+import random               #imports a random module for this computer.
 
-    cpu = random.choice(choices)
-    player = None
+player_choice = input("Rock, Paper, Scissors, Shield or Gwagg? ").lower()
 
-    while player not in choices:
-        player = input('rock, paper, scissors, shield or gwagg?: ').lower()
+random_num = random.randint(0,4)
+if random_num == 0:
+    cpu_choice = "rock"
+elif random_num == 1:
+    cpu_choice = "paper"
+elif random_num == 2:
+    cpu_choice = "scissors"
+elif random_num == 3:
+    cpu_choice = "shield"
+elif random_num == 4:
+    cpu_choice = "gwagg"
 
-    if player == cpu:
-        print('cpu:', cpu)
-        print('player:', player)
-        print('That games was a Tie!')
+print()
+print("Your choice:",player_choice)
+print("Computer's choice:", cpu_choice)
+print()
 
-    elif player == 'rock':
-        if cpu == 'paper':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Hahahaha...You Lose!')
-        if cpu == 'scissors':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Welldone you beat me!')
-        if cpu == 'shield':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Unlucky!...close draw')
-        if cpu == 'gwagg':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Bye Bye')
-        
-    elif player == 'paper':
-        if cpu == 'rock':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Congratulations you won!')
-        if cpu == 'scissors':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Nevermind, you lose!')
-        if cpu == 'shield':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('You Draw!')
-        if cpu == 'gwagg':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Bye Bye')
+if player_choice == "rock":
+    if cpu_choice == "rock":
+        print("The game was a tie!")
+    elif cpu_choice == "paper":
+        print("You Lose!")
+    elif cpu_choice == "scissors":
+        print("You win!")
+    elif cpu_choice == "shield":
+        print("The game was a tie!")
+    elif cpu_choice == "gwagg":
+        print("You lost!")
 
-    elif player == 'scissors':
-        if cpu == 'paper':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Congratulations you won!')
-        if cpu == 'rock':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Nevermind, you lose!')
-        if cpu == 'shield':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('You Draw!')
-        if cpu == 'gwagg':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Bye Bye')
+elif player_choice == "paper":
+    if cpu_choice == "paper":
+        print("The game was a tie!")
+    elif cpu_choice == "rock":
+        print("You Win!")
+    elif cpu_choice == "scissors":
+        print("You Lose!")
+    elif cpu_choice == "shield":
+        print("The game was a tie!")
+    elif cpu_choice == "gwagg":
+        print("You lost!")
 
-    elif player == 'shield':
-        if cpu == 'paper':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('You Draw!')
-        if cpu == 'rock':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('You Draw!')
-        if cpu == 'scissors':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('You Draw!')
-        if cpu == 'gwagg':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Kaaaching!...its a draw')
+elif player_choice == "scissors":
+    if cpu_choice == "scissors":
+        print("The game was a tie!")
+    elif cpu_choice == "rock":
+        print("You Lose!")
+    elif cpu_choice == "paper":
+        print("You Win!")
+    elif cpu_choice == "shield":
+        print("The game was a tie!")
+    elif cpu_choice == "gwagg":
+        print("You lost!")
 
-    elif player == 'gwagg':
-        if cpu == 'paper':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Welldone my friend!')
-        if cpu == 'rock':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Congratulations you won!')
-        if cpu == 'scissors':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Welldone you win!')
-        if cpu == 'shield':
-            print('cpu:', cpu)
-            print('player:', player)
-            print('Its a draw')
+elif player_choice == "shield":
+    if cpu_choice == "shield":
+        print("The game was a tie!")
+    elif cpu_choice == "rock":
+        print("The game was a tie!")
+    elif cpu_choice == "paper":
+        print("The game was a tie!")
+    elif cpu_choice == "scissors":
+        print("The game was a tie!")
+    elif cpu_choice == "gwagg":
+        print("The game was a tie!")
 
-    play_again = input("Play again? (yes/no): ").lower()
+elif player_choice == "gwagg":
+    if cpu_choice == "gwagg":
+        print("You Win!")
+    elif cpu_choice == "rock":
+        print("You Win!")
+    elif cpu_choice == "paper":
+        print("You Win!")
+    elif cpu_choice == "scissors":
+        print("You Win!")
+    elif cpu_choice == "shield":
+        print("The game was a tie!")
 
-    if play_again != "yes":
-        break
-print("Bye Bye!")
 
 

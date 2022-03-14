@@ -1,7 +1,7 @@
-import random               #imports a random module for this computer.
+import random
 
 print()
-input("Welcome to a game of Rock, Paper, Scissors, Shield or Gwagg! \n\nPress Enter to start. ")
+input("Welcome to Rock, Paper, Scissors Advanced \n\nPress Enter to start. ")
 print()
 
 player_score = 0
@@ -12,8 +12,7 @@ while True:
     while player_choice != "rock" and player_choice != "paper" and player_choice != "scissors" and player_choice != "shield" and player_choice != "gwagg":
         player_choice = input("Invalid input, please try again: ").lower()
 
-
-    random_num = random.randint(0,4)
+    random_num = random.randint(0, 4)
     if random_num == 0:
         cpu_choice = "rock"
     elif random_num == 1:
@@ -104,8 +103,8 @@ while True:
             print("The game was a tie!")
 
     print()
-    print("You have", player_score,"wins")
-    print("The compuer has", cpu_score,"wins")
+    print("You have", player_score, "wins")
+    print("The compuer has", cpu_score, "wins")
     print()
 
     repeat = input("Play again? (Y/N) ").lower()
@@ -117,4 +116,3 @@ while True:
 
     print()
     print("--------------------------------------\n")
-

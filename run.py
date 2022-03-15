@@ -1,5 +1,24 @@
 import random
 
+"""
+Rock, Paper, Scissors Advanced.
+Game Version: 1.0.0
+Created by Pete Machin
+
+GAME RULES:
+
+A RTS game of Rock, Paper, Scissors, Shield and God with a Golden Gun.
+The player goes first and must choose from one of 5 weapon options.
+The Cpu then selects a weapon choice which is randomly generated.
+If a player and cpu select the same weapon, the game is a draw.
+The player has the option to continue or end the game at the end of each turn.
+If the Player or Cpu wins a round they will receive one point.
+If the game is a tie both players receive zero points.
+The game will continue for as long as the player selects YES to continue.
+If the player selects NO then the game will end.
+
+"""
+
 print()
 input("Welcome to Rock, Paper, Scissors Advanced \n\nPress Enter to start. ")
 print()

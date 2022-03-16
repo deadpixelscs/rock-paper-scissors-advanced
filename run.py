@@ -20,6 +20,9 @@ If the player selects NO then the game will end.
 """
 
 print()
+print("Game Version: 1.0.0")
+print("Created by Pete Machin")
+print()
 input("Welcome to Rock, Paper, Scissors Advanced \n\nPress Enter to start. ")
 print()
 

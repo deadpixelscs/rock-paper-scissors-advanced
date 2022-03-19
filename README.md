@@ -1,31 +1,31 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Pete Machin,
+ROCK, PAPER, SCISSORS ADVANCED
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Rock, Paper, Scissors Advanced is a RTS based on the retro game of chance. This versin throws another choice into th emix with Gun now available to choose. Play as many rounds as you can to beat the cpu.
 
-## Reminders
+GAME RULES
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+* Player must select Rock, Paper, Scissors or Gun.
+* If the CPU picks the same, the game its always a TIE!
+* Rock always beats Scissors
+* Paper always beats Rock.
+* Scissors always beat Paper.
+* Gun always beats everything except Rock.
+* At the end of each turn you have the option to play again Yes or No.
+* If you select YES the game will start again and the total wins are logged on screen.
+* If you select NO the game will end.
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Validator Testing
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* PEP8
+    * No errors were returned when passing through the official PEP8 validator.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Deployment
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+The site was deployed to GitHub and Heroku pages. 
 
-Connect your GitHub repository and deploy as normal.
+Credits
 
-## Constraints
+Stackoverflow and YouTube videos
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!

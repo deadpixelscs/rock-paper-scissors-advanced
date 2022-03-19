@@ -14,6 +14,16 @@ cpu_score = 0
 
 
 while True:
+    """
+    Show player an option to choose from and return their input.
+
+    Args:
+        Show the player the cpu selection and then the game outcome in points.
+        A score value will be appended to this. See below.
+
+    Returns:
+        The points outcome, converted to lowercase.
+    """
 
 
 # Game results
@@ -25,6 +35,7 @@ while True:
         "gun": {"gun": "0", "paper": "1", "scissors": "1", "rock": "0"},
     }
 
+
     def converted_outcome(number):
         if number == 0:
             return "rock"
@@ -33,27 +44,35 @@ while True:
         elif number == 2:
             return "scissors"
         elif number == 3:
-            return "gun"       
+            return "gun"
 
-    #Main loop
+# Main loop
 
-    while 1:
+    while True:
+            """
+    Show players what they have chosen and the game outcome.
+
+    Args:
+        Show the player the cpu selection and then the game outcome in points.
+        A score value will be appended to this. See below.
+
+    Returns:
+        The points outcome, converted to lowercase.
+    """
         random_num = random.randint(0, 3)
         cpu_choice = converted_outcome(random_num)
-        player_choice = input(str("Select Rock, Paper, Scissors or Gun: ")).lower()
-        try: 
-            print("You selected : ",player_choice)
-            print("The computer selected : ",cpu_choice)
+        player_choice = input(str("Rock, Paper, Scissors or Gun? ")).lower()
+        print()
+
+        try:
+            print("You selected : ", player_choice)
+            print()
+            print("The computer selected : ", cpu_choice)
+            print()
             print("Game Outcome")
+            print()
             print(outcomes[player_choice][cpu_choice])
             print("")
         except:
-            print("Invalid input, please try again: ")
-
-
-        
-        
-        
-        
-        
-        
+            print("--- INVALID INPUT!...Please try again: ---")
+            print()

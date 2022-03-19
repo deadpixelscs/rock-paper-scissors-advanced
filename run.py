@@ -1,58 +1,123 @@
 import random
 
-# Store wins for the player and cpu
-
+# Stores the amount of wins for the player and cpu
 player_score = 0
 cpu_score = 0
-
-choices = ["r", "p", "s", "g"]
-
-def get_choice(input):
-    """
-    After presisng enter to begin the player can choose from one of the four
-    options using the first letter of each choice on the keyboard. If the
-    player no longer wishes to play they can Quit at anytime by
-    pressing Q
-    """
-    if input == "r":
-        return "Rock"
-    elif input == "p":
-        return "Paper"
-    elif input == "s":
-        return "Scissors"
-    elif input == "g":
-        return "Gun"
-
 
 print("Game Version: 1.0.0")
 print("Created by Pete Machin")
 print()
 print("Welcome to Rock, Paper, Scissors Advanced!!!")
 print()
-input("Press Enter to begin")
-print()
-print("[r] = Rock, [p] = Paper, [s] = Scissors, [h] =  Help and [q] = Quit\n")
-counter = 1
+
+
+def player_option():
+    """
+    Allows the player to enter their option and then checks if
+    the entered key is valid and then returns the players choice.
+    """
+    player_choice = input("Choose Rock, Paper, Scissors or Gun: ")
+    if player_choice in ["Rock", "rock", "r", "R", "ROCK"]:
+        player_choice = "r"
+    elif player_choice in ["Paper", "paper", "p", "P", "PAPER"]:
+        player_choice = "p"
+    elif player_choice in ["Scissors", "scissors", "s", "S", "SCISSORS"]:
+        player_choice = "s"
+    elif player_choice in ["Gun", "gun", "g", "G", "GUN"]:
+        player_choice = "g"
+    else:
+        print("Invalid input, please try again")
+        player_option()
+    return player_choice
+
+def cpu_option():
+    """
+    Randomly picks a number between 0 - 3 and then matches the numbers to the
+    corresponding cpu choice
+    """
+    cpu_choice = random.randint(0, 3)
+    if cpu_choice == 0:
+        cpu_choice = "r"
+    elif cpu_choice == 1:
+        cpu_choice = "p"
+    elif cpu_choice == 2:
+        cpu_choice = "s"
+    elif cpu_choice == 3:
+        cpu_choice = "g"
+    return cpu_choice
+
+
 while True:
+    # Calls players option functions and stores the returned value
+    player_choice = player_option()
+    cpu_choice = cpu_option()
+    print("")
 
-    print("Game "+str(counter)+":")
-    print("Please choose a letter:")
-    player_choice = input()
+    # Checks the possible winning conditions to pick who the winner is
+    if player_choice == "r":
+        if cpu_choice == "r":
+            print("You chose Rock, the cpu chose Rock, it's a TIE!")
+        elif cpu_choice == "p":
+            print("You chose Rock, the cpu chose Paper, you LOST!")
+            cpu_score += 1
+        elif cpu_choice == "s":
+            print("You chose Rock, the cpu chose Scissors, you WON!")
+            player_score += 1
+        elif cpu_choice == "g":
+            print("You chose Rock, the cpu chose Gun, you LOST!")
+            player_score += 1
 
-    # Check to seee if the user wants to see the rules, if so select the Help
-    if player_choice == "h":
-        print("Rules go here")
-        input("Press Enter when you are ready to begin: ")
+    elif player_choice == "p":
+        if cpu_choice == "r":
+            print("You chose Paper, the cpu chose Rock, you WON!")
+            player_score += 1
+        elif cpu_choice == "p":
+            print("You chose Paper, the cpu chose Paper, it's a TIE!")
+        elif cpu_choice == "s":
+            print("You chose Paper, the cpu chose Scissors, you LOST!")
+            cpu_score += 1
+        elif cpu_choice == "g":
+            print("You chose Paper, the cpu chose Gun, you LOST!")
+            cpu_score += 1
+            
+    elif player_choice == "s":
+        if cpu_choice == "r":
+            print("You chose Scissors, the cpu chose Rock, you LOST!")
+            cpu_score += 1
+        elif cpu_choice == "p":
+            print("You chose Scissors, the cpu chose Paper, you WON!")
+            player_score += 1
+        elif cpu_choice == "s":
+            print("You chose Scissors, the cpu chose Scissors, it's a TIE!")
+        elif cpu_choice == "g":
+            print("You chose Scissors, the cpu chose Gun, you LOST!")
+            cpu_score += 1
 
-    # Check that the user wants to quit the game and if so, then end the game.
-    if player_choice == "q":
-        print("Thanks for playing!...Please come back SOON!")
+    elif player_choice == "g":
+        if cpu_choice == "r":
+            print("You chose Gun, the cpu chose Rock, you LOST!")
+            cpu_score += 1
+        elif cpu_choice == "p":
+            print("You chose Gun, the cpu chose Paper, you WON!")
+            player_score += 1
+        elif cpu_choice == "s":
+            print("You chose Gun, the cpu chose Scissors, you WON!")
+            player_score += 1
+        elif cpu_choice == "g":
+            print("You chose Gun, the cpu chose Gun, it's a TIE!")
+    
+    
+    # Prints the latest scores
+    print("")
+    print(f"Player score: {player_score}")
+    print(f"Computer score: {cpu_score}")
+    print("")
+
+    # Checks if the player wants to continue playing another round
+    player_choice = input("Do you want to play again? (y/n)")
+    if player_choice in ["YES", "Yes", "yes", "y", "Y"]:
+        pass
+    elif player_choice in ["NO", "No", "no", "n", "N"]:
         break
-
-# Allow the CPU to randomly pick one of the 4 choices.
-    random_index = random.randint(0, 3)
-    cpu_choice = choices[random_index]
-
-    print("You selected "+get_choice(player_choice))
-    print("The CPU selected "+get_choice(cpu_choice))
-
+    else:
+        break

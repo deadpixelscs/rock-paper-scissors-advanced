@@ -1,7 +1,7 @@
 
 ROCK, PAPER, SCISSORS ADVANCED
 
-Rock, Paper, Scissors Advanced is a RTS based on the retro game of chance. This versin throws another choice into th emix with Gun now available to choose. Play as many rounds as you can to beat the cpu.
+Rock, Paper, Scissors Advanced is a RTS based on the retro game of chance. This version throws another choice into the mix with 'Gun' now available for selection. Play as many rounds as you can to beat the cpu.
 
 GAME RULES
 

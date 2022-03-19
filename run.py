@@ -22,8 +22,6 @@ def get_choice(input):
         return "Scissors"
     elif input == "g":
         return "Gun"
-    else:
-        return " "
 
 
 print("Game Version: 1.0.0")
@@ -33,27 +31,28 @@ print("Welcome to Rock, Paper, Scissors Advanced!!!")
 print()
 input("Press Enter to begin")
 print()
-print("[r] = Rock, [p] = Paper, [s] = Scissors, [h] =  Help/Rules and [q] = Quit\n")
+print("[r] = Rock, [p] = Paper, [s] = Scissors, [h] =  Help and [q] = Quit\n")
 counter = 1
 while True:
+
     print("Game "+str(counter)+":")
-    print()
     print("Please choose a letter:")
     player_choice = input()
 
-# Check to seee if the user wants to see the rules, if so select the Help menu
+    # Check to seee if the user wants to see the rules, if so select the Help
     if player_choice == "h":
         print("Rules go here")
-        break;
+        input("Press Enter when you are ready to begin: ")
 
-# Check that the user wants to quit the game and if so, then end the game.
+    # Check that the user wants to quit the game and if so, then end the game.
     if player_choice == "q":
         print("Thanks for playing!...Please come back SOON!")
-        break;
+        break
 
 # Allow the CPU to randomly pick one of the 4 choices.
-random_index = random.randint(0, 3)
-cpu_choice = choices[random_index]
+    random_index = random.randint(0, 3)
+    cpu_choice = choices[random_index]
 
-print("You selected "+get_choice(player_choice)+"The CPU selected "+get_choice(cpu_choice))
+    print("You selected "+get_choice(player_choice))
+    print("The CPU selected "+get_choice(cpu_choice))
 

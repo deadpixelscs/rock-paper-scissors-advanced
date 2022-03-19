@@ -1,64 +1,59 @@
 import random
 
-print()
+# Store wins for the player and cpu
+
+player_score = 0
+cpu_score = 0
+
+choices = ["r", "p", "s", "g"]
+
+def get_choice(input):
+    """
+    After presisng enter to begin the player can choose from one of the four
+    options using the first letter of each choice on the keyboard. If the
+    player no longer wishes to play they can Quit at anytime by
+    pressing Q
+    """
+    if input == "r":
+        return "Rock"
+    elif input == "p":
+        return "Paper"
+    elif input == "s":
+        return "Scissors"
+    elif input == "g":
+        return "Gun"
+    else:
+        return " "
+
+
 print("Game Version: 1.0.0")
 print("Created by Pete Machin")
 print()
 print("Welcome to Rock, Paper, Scissors Advanced!!!")
 print()
-input("Press Enter to start: ")
+input("Press Enter to begin")
 print()
-
-player_score = 0
-cpu_score = 0
-
-# Game results
-
-"""
-placeholder
-
-Args:
-    placeholder
-
-Returns:
-    placeholder
-"""
-
+print("[r] = Rock, [p] = Paper, [s] = Scissors, [h] =  Help/Rules and [q] = Quit\n")
+counter = 1
 while True:
+    print("Game "+str(counter)+":")
+    print()
+    print("Please choose a letter:")
+    player_choice = input()
 
-    outcomes = {
-        "rock": {"rock": "0", "paper": "0", "scissors": "1", "gun": "1"},
-        "paper": {"paper": "0", "rock": "1", "scissors": "0", "gun": "0"},
-        "scissors": {"scissors": "0", "paper": "1", "rock": "0", "gun": "0"},
-        "gun": {"gun": "0", "paper": "1", "scissors": "1", "rock": "0"},
-    }
+# Check to seee if the user wants to see the rules, if so select the Help menu
+    if player_choice == "h":
+        print("Rules go here")
+        break;
 
-    def converted_outcome(number):
-        if number == 0:
-            return "rock"
-        elif number == 1:
-            return "paper"
-        elif number == 2:
-            return "scissors"
-        elif number == 3:
-            return "gun"
+# Check that the user wants to quit the game and if so, then end the game.
+    if player_choice == "q":
+        print("Thanks for playing!...Please come back SOON!")
+        break;
 
-# Main loop
-    while True:
-        random_num = random.randint(0, 3)
-        cpu_choice = converted_outcome(random_num)
-        player_choice = input(str("Rock, Paper, Scissors or Gun? ")).lower()
-        print()
+# Allow the CPU to randomly pick one of the 4 choices.
+random_index = random.randint(0, 3)
+cpu_choice = choices[random_index]
 
-        try:
-            print("You selected : ", player_choice)
-            print()
-            print("The computer selected : ", cpu_choice)
-            print()
-            print("Game Outcome")
-            print()
-            print(outcomes[player_choice][cpu_choice])
-            print("")
-        except:
-            print("--- INVALID INPUT!...Please try again: ---")
-            print()
+print("You selected "+get_choice(player_choice)+"The CPU selected "+get_choice(cpu_choice))
+
